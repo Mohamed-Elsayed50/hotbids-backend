@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sockets</title>
+</head>
+<body>
+
+<ul>
+    <li>
+    socket.send({
+    userId: 45,
+    token: 'b962ed9d-24f9-4191-9921-3881bdfb7c8a',
+    carId: 1
+    })
+    </li>
+    <li>socket.emit('notificationReaded', 10) //notification id</li>
+    <li>socket.emit('placeBid', 6010) //bid value, car must been selected in one of previous message</li>
+</ul>
+
+<script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+
+<script>
+    const socket = io('http://localhost:3000/')
+
+    socket.on('connect', () => {
+        socket.send({
+            userId: 45,
+            token: 'b962ed9d-24f9-4191-9921-3881bdfb7c8a',
+            carId: 1
+        })
+    })
+
+    socket.on('message', data => {
+        console.log(data)
+    })
+
+    //socket.emit('notificationReaded', 10)//notification id
+    //socket.emit('placeBid', 6010)//bid value, car must been selected in one of previous message
+</script>
+</body>
+</html>

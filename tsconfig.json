@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "lib": [
+            "es2020",
+            "DOM"
+        ],
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "strictNullChecks": true,
+        "esModuleInterop": true,
+        "declaration": false,
+        // "declarationDir": "./tmp",
+        // "outDir": "./tmp",
+        "emitDecoratorMetadata": false,
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "react": [
+                "node_modules/@types/react"
+            ],
+            "node": [
+                "node_modules/@types/node"
+            ],
+            "express": [
+                "node_modules/@types/express"
+            ],
+            "styled-components": [
+                "node_modules/@types/styled-components"
+            ]
+        }
+    },
+    "include": [
+        "./app/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "lib"
+    ]
+}
